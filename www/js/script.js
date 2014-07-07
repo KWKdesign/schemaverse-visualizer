@@ -149,8 +149,8 @@ var schemaverse = {
         x: null,
         y: null,
         init: function(callback){
-            var width = 753;
-            var height = 753;
+            var width = 700;
+            var height = 700;
             var margin = 1;
             var extentX;
             var extentY;
@@ -222,7 +222,7 @@ var schemaverse = {
                             .nice();
 
                         y = schemaverse.map.y = d3.scale.linear()
-                            .range([0, height])
+                            .range([height, 0])
                             .domain(extentY)
                             .clamp(true)
                             .nice();
@@ -284,16 +284,14 @@ var schemaverse = {
                 var y0 = y(extentY[0]);
                 var y1 = y(extentY[1]);
 
-
-
                 $rectClosup
                     .style('display', 'block')
                     .transition()
                     .duration(4000)
-                        .attr('width', Math.abs(x1 - x0))
-                        .attr('height', Math.abs(y1 - y0))
-                        .attr('x', x0)
-                        .attr('y', y0);
+                        .attr('width', Math.abs( x1 - x0 ) )
+                        .attr('height', Math.abs( y1 - y0 ) )
+                        .attr('x', x1 )
+                        .attr('y', parseFloat( y1 - Math.abs( y1 - y0 ) ));
             }
             else {
 
@@ -305,8 +303,8 @@ var schemaverse = {
 
     closeup: {
         init: function(){
-            var width = 358;
-            var height = 358;
+            var width = 300;
+            var height = 300;
             var margin = 1;
             var extentX;
             var extentY;
@@ -356,8 +354,8 @@ var schemaverse = {
 
                         var box = closeup.box.replace(/[\(\)]/g,'').split(',');
                         if( box.length === 4){
-                            extentX = [box[2], box[0]];
-                            extentY = [box[3], box[1]];
+                            extentX = [box[0], box[2]];
+                            extentY = [box[1], box[3]];
 
                             vis.style('display', 'block');
 
@@ -365,7 +363,7 @@ var schemaverse = {
                                 .style('height', '90px');
 
                             x = d3.scale.linear()
-                                .range([0, width])
+                                .range([width, 0])
                                 .domain(extentX)
                                 .clamp(false)
                                 .nice();
