@@ -26,16 +26,16 @@ else {
             - ( ships_built * ( select cost from price_list where code = upper('ship') ) )
         ) networth,
         ships_built - ships_lost ships,
-        planets_conquered - planets_lost planets,
+        ( select count(1) from planets where conqueror_id = stats.player_id ) planets,
         symbol, rgb
         from current_player_stats stats
         join player_list on stats.player_id = id
         where 1=1
         and fuel_mined > 0
         and ships_built > 0
-        and planets_conquered >= -1
+        and ( select count(1) from planets where conqueror_id = stats.player_id ) >= -1
         order by
-            planets_conquered - planets_lost desc,
+            planets desc,
             ships_built - ships_lost desc,
             (
                 100000 + 10000
