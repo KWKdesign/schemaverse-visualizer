@@ -149,8 +149,8 @@ var schemaverse = {
         x: null,
         y: null,
         init: function(callback){
-            var width = 700;
-            var height = 700;
+            var width = 650;
+            var height = 650;
             var margin = 1;
             var extentX;
             var extentY;
