@@ -8,6 +8,7 @@ table {
 .table {
   width: 100%;
   margin-bottom: 18px;
+  color: #fff;
 }
 .table th,
 .table td {
@@ -91,11 +92,11 @@ table {
 }
 .table-striped tbody tr:nth-child(odd) td,
 .table-striped tbody tr:nth-child(odd) th {
-  background-color: #f9f9f9;
+  background-color: #333;
 }
 .table tbody tr:hover td,
 .table tbody tr:hover th {
-  background-color: #f5f5f5;
+  background-color: #454545;
 }
 
 .fade {
@@ -305,7 +306,7 @@ table {
 
 body {
     font: 10px sans-serif;
-    background-color: #ddd;
+    background-color: #000;
 }
 
 .logo {
@@ -335,17 +336,19 @@ body {
 }
 
 #container .left {
-    width: 360px;
+    width: 300px;
 }
 
 #container .main {
-    width: 800px;
+    width: 680px;
+    height: 680px;
+    margin-top: 40px;
 }
 
 .left table {
-    background: #eee;
+    background: #000;
     margin: 0 0 5px;
-    width: 360px;
+    width: 300px;
 }
 tr.player-row {
     cursor: pointer;
@@ -357,7 +360,7 @@ td.symbol {
 
 text.dot {
     cursor: pointer;
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 100;
     stroke: transparent;
     -webkit-transition: font-size 0.5s;
@@ -368,7 +371,7 @@ text.dot {
 }
 
 .map text.selected {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 text.unclaimed {
@@ -376,7 +379,7 @@ text.unclaimed {
 }
 
 .closeup text {
-    font-size: 25px;
+    font-size: 60px;
 }
 
 text.conquered {
@@ -384,7 +387,7 @@ text.conquered {
 }
 
 .closeup text.conquered {
-    font-size: 45px;
+    font-size: 85px;
 }
 
 .hover text {
@@ -402,7 +405,7 @@ h1 {
 }
 
 rect {
-    fill: #fff;
+    fill: #000;
     shape-rendering: crispEdges;
 }
 
@@ -412,7 +415,7 @@ rect {
 
 rect#rect-closeup {
     fill: none;
-    stroke: #000;
+    stroke: #ccc;
     stroke-width: 2px;
     z-index: 99;
 }
